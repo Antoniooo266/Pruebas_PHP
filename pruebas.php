@@ -32,5 +32,15 @@ if(chop("Cadena \n\n")=="Cadena")
     echo "Iguales<br><br>";
 echo str_replace("azul","verde","Atrapado en tu mirada azul,tan azul como en mismo sueños.."),"<br>";
 ?>
+<h1>Arrays</h1>
+<?php
+$comidas = array("Paella","Tortilla","Cocido");
+echo "Men&cute;:".$comidas[0]. "," .$comidas[1]. "and" .$comidas[2]. "." ;
+?>
+<h2>Ejersisios</h2>
+<?php
+$dias = array("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo");
+echo "Men&cute;:".$comidas[0]. "," .$comidas[1]. "and" .$comidas[2]. "." ;
+?>
 </body>
 </html>
