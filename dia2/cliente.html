@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Datos Cliente</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        color: aliceblue;
+        background-image: url("https://i.pinimg.com/564x/02/70/87/027087942986c79205df5b67b018f1ac.jpg");
+    }
+    .form {
+        background-image: url("https://www.publicdomainpictures.net/pictures/30000/velka/solid-green-background.jpg");
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: 750px;
+        padding: 20px;
+        width: 320px;
+    }
+    div{
+        display: block;
+    }
+</style>
+<body>
+    <center>
+    <div class="form">
+        <h2>( ͡°( ͡° ͜ʖ ͡°( ❛ _⦣ ❛ ) ͡° ͜ʖ ͡°) ͡°)</h2>
+        <form method="post" action="validacion_datos.php">
+            <p>Nombre del Cliente</p>
+            <label>
+                <input type="text" name="nombre">
+            </label>
+            <p>DNI</p>
+            <label>
+                <input type="text" name="dni">
+            </label>
+            <p>Direccion</p>
+            <label>
+                <input type="text" name="dirc">
+            </label>
+            <p>Cod. Postal</p>
+            <label>
+                <input type="text" name="cod">
+            </label>
+            <p>Telefono</p>
+            <label>
+                <input type="number" name="tel">
+            </label>
+            <p>Email</p>
+            <label>
+                <input type="text" name="email">
+            </label>
+            <p>Codigo Vendedor</p>
+            <label>
+                <input type="number" name="cod_ven">
+            </label>
+            <p>Monto Factura</p>
+            <label>
+                <input type="number" name="facts">
+            </label>
+            <br>
+            <br>
+            <button name="boton" type="submit" style="padding: 10px 30px">Enviar ( ❛ ͜ʖ ❛ )</button>
+        </form>
+    </div>
+  </center>
+</body>
+</html>
