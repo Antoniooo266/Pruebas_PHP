@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda</title>
+</head>
+<style>
+    body{
+        background-image: url("https://i.pinimg.com/564x/c3/6d/a9/c36da90b6a9c53af5f00565747aed0f1.jpg");
+        margin-left: 100px;
+    }
+    .form {
+        background-color: beige;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: 930px;
+        padding: 20px;
+        width: 320px;
+    }
+</style>
+<body>
+<center>
+    <div class="form">
+        <form method="get" action="../php/Productos_Tienda.php">
+            <h2>Tienda Cabesa</h2>
+            <p>Introduce el nombre producto</p>
+            <input type="text" name="producto1">
+            <p>Introduce el precio</p>
+            <input type="text"name="precio1">
+            <p>Introduce el IVA</p>
+            <select name="operador1">
+                <option value="1">21%
+                </option>
+                <option value="2">10%
+                </option>
+                <option value="3">4%
+                </option>
+            </select>
+            <p>Introduce el nombre producto</p>
+            <input type="text" name="producto2">
+            <p>Introduce el precio</p>
+            <input type="text"name="precio2">
+            <p>Introduce el IVA</p>
+            <select name="operador2">
+                <option value="1">21%
+                </option>
+                <option value="2">10%
+                </option>
+                <option value="3">4%
+                </option>
+            </select>
+            <p>Introduce el nombre producto</p>
+            <input type="text" name="producto3">
+            <p>Introduce el precio</p>
+            <input type="text"name="precio3">
+            <p>Introduce el IVA</p>
+            <select name="operador3">
+                <option value="1">21%
+                </option>
+                <option value="2">10%
+                </option>
+                <option value="3">4%
+                </option>
+            </select>
+            <br>
+            <br>
+            <button name="boton" type="submit" style="padding: 10px 30px">Enviar</button>
+        </form>
+        <br>
+        <br>
+        <table border="1px">
+            <tr>
+                <td>Subtotal</td>
+                <td>IVA</td>
+                <td>Total</td>
+                <td>Total con Descuento del 5%</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</center>
+</body>
+</html>
