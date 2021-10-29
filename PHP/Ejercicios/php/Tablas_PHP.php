@@ -44,6 +44,17 @@
         }
     }
     ?>
+    <h2>Clase 2 DAM</h2>
+    <?php
+    echo "<table>";
+    echo "<tr><td></td><td></td><td>Laura</td><td></td><td></td></tr>";
+    echo "<tr><td>Lucas</td><td></td><td></td><td></td><td>Lucia</td></tr>";
+    echo "<tr><td>Antonio</td><td></td><td></td><td></td><td>Salva</td></tr>";
+    echo "<tr><td></td><td>Sergio</td><td>Nico</td><td>Angel</td></tr>";
+    echo "<tr><td></td><td></td><td></td><td> </td><td></td></tr>";
+    echo "<tr><td></td><td>Javier</td><td></td><td>Carmen</td><td></td></tr>";
+    echo "</table>";
+    ?>
 </center>
 </body>
 </html>
