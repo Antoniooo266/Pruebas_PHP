@@ -29,8 +29,6 @@
 </style>
 <body>
 <?php
-session_start();
-$_SESSION["valor"]=$_POST["lentes"];
 echo "<center>";
     echo "<div class='form'>";
         echo "<form>";
@@ -51,7 +49,7 @@ echo "<center>";
     echo "</div>";
 echo "</center>";
 
-if(isset(){
+if(isset($_GET["lentes"])){
     $tipo = $_GET["lentes"];
     echo "<center>";
     echo "<div class = form>";
@@ -66,7 +64,6 @@ if(isset(){
                 echo "<option value='Neo-Silver'> Neo-Silver</option>";
                 echo "<option value='HD-Gold'>HD-Gold</option>";
                 echo "<option value='Individual Platinium'>Individual Platinium</option>";
-                echo "<option value='Digital Office'>Digital Office</option>";
                 echo "<option value='Neo-Sport'>Neo-Sport</option>";
                 echo "<option value='Taral (Mineral)'>Taral (Mineral)</option>";
                 echo "<option value='Proaspherica'>Proaspherica</option>";
@@ -107,15 +104,14 @@ if(isset($_GET["modelo"])){
     echo "</center>";
 }
 
-if(isset($_GET["medida"])) {
-    $medida = $_GET["medida"];
-    echo "<center>";
-    echo "<div class = form>";
-    echo "<h1>Tu Pedido</h1>";
-    echo "El tipo de lente que eligio fue: ".$medida;
-    echo "</div>";
-}
-echo "hola".$modelo;
-?>
+    if(isset($_GET["medida"])) {
+        $medida = $_GET["medida"];
+        echo "<center>";
+        echo "<div class = form>";
+        echo "<h1>Tu Pedido</h1>";
+        echo "El tipo de lente que eligio fue: ".$medida;
+        echo "</div>";
+    }
+    ?>
 </body>
 </html>
