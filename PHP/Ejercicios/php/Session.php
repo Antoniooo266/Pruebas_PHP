@@ -1,80 +1,71 @@
+<?php
+session_start();
+?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/Fondo.css">
-    <title>Sesiones</title>
+    <title>Document</title>
 </head>
-<style>
-    body{
-        text-align: center;
-        color: aliceblue;
-        background-image: url("https://i.pinimg.com/564x/61/01/83/610183ad5ae2528984151590e6315896.jpg");
-    }
-    .form {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL0AAAELCAMAAAC77XfeAAAAA1BMVEWxm9kOXJBcAAAASElEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeDcYqAAE00FRDAAAAAElFTkSuQmCC");
-        border-radius: 20px;
-        box-sizing: border-box;
-        height: 260px;
-        padding: 20px;
-        width: 320px;
-        margin-top: 100px;
-    }
-    div{
-        display: block;
-    }
-</style>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $("select").change(function(){
-            $(this).find("option:selected").each(function(){
-                var optionValue = $(this).attr("value");
-                if(optionValue){
-                    $(".box").not("." + optionValue).hide();
-                    $("." + optionValue).show();
-                } else{
-                    $(".box").hide();
-                }
-            });
-        }).change();
-    });
-</script>
 <body>
-<center>
-<div class="form">
-    <form>
-        <h1>MultiOpticas</h1>
-        <label for="lentes">Tipo</label>
-        <br>
-        <br>
-        <select name="lentes" id="lentes">
-            <option value='modelo'>Monofocal Stock</option>
-            <option value='Monofocal Fabricacion'>Monofocal Fabricacion</option>
-            <option value='Progresivos'>Progresivos</option>
-            <option value='Bifocales'>Bifocales</option>
-        </select>
-        <br>
-        <br>
-        <div class="modelo box">
-            <label for=' medida'>Medida</label>
-            <br>
-            <br>
-            <select name="modelo" id="modelo">
-                <option value='modelo'>Expert</option>
-                <option value='Neo-Silver'> Neo-Silver</option>
-                <option value='HD-Gold'>HD-Gold</option>
-                <option value='Individual Platinium'>Individual Platinium</option>
-                <option value='Neo-Sport'>Neo-Sport</option>
-                <option value='Taral (Mineral)'>Taral (Mineral)</option>
-                <option value='Proaspherica'>Proaspherica</option>
-            </select>
-        </div>
-    </form>
-</div>
-</center>
+<form method="post">
+
+
+    <?php
+
+    if (!isset($_SESSION["tipo"]) && !isset($_POST["tipo"])){
+        echo "<select onchange='this.form.submit()'  name='tipo'>";
+        echo "<option disabled >--Seleccione tipo de lentes--</option>";
+        echo "<option value='Stock'>Monofocal Stock</option>";
+        echo "<option value='Fabricacion'>Monofocal Fabricación</option>";
+        echo "<option value='Progresivo'>Progresivos</option>";
+        echo "<option value='Bifocales'>Bifocales</option>";
+        echo "</select>";
+        echo "<br>";
+
+    }else{
+        if (!isset($_SESSION["tipo"])){
+            $_SESSION["tipo"]=$_POST["tipo"];}
+
+        echo "<select><option selected disabled>".$_SESSION['tipo']."</option></select><br>";
+        if (!isset($_SESSION["modelo"]) && !isset($_POST["modelo"])){
+            echo "<select name='modelo' onchange='this.form.submit()' >";
+            echo "<option disabled >Seleccione modelo</option>";
+            echo "<option value='expert'>expert</option>";
+            echo "<option value='Neo-Silver'>Neo-Silver</option>";
+            echo "<option value='HD_Gold'>HD-Gold</option>";
+            echo "<option value='Individual Platinum'>Individual Platinum</option>";
+            echo "<option value='Digital Office'>Digital Office</option>";
+            echo "<option value='Neo-Sport'>Neo-Sport</option>";
+            echo "<option value='Taral'>Taral</option>";
+            echo "<option value='Proaspherica'>Proaspherica</option>";
+            echo "</select><br>";
+
+        }else{
+            if (!isset($_SESSION["modelo"])){
+                $_SESSION["modelo"]=$_POST["modelo"];}
+            echo "<select><option selected disabled>".$_SESSION['modelo']."</option></select><br>";
+
+            if (!isset($_SESSION["medida"])&& !isset($_POST["medida"])){
+                echo "<select name='medida' onchange='this.form.submit()'>";
+                echo "<option disabled >Seleccione medidas</option>";
+                echo "<option value='14mm'>14mm</option>";
+                echo "<option value='18mm'>18mm</option>";
+                echo "</select><br>";
+            }else{
+                if (!isset($_SESSION["medida"])){
+                    $_SESSION["medida"]=$_POST["medida"];}
+                echo "<select><option selected disabled>".$_SESSION['medida']."</option></select><br>";
+            }
+        }
+    }
+    ?>
+
+
+
+</form>
 </body>
-<?php
+</html>
